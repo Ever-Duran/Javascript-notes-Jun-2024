@@ -1,7 +1,23 @@
 These are some JS notes about courses Some code lines and notes are taken from freecodecamp.org. so I don't own the rights. However, I'm just writing for future references.
-
  To get the last element of any array, you can use the following syntax:
+
 
 //
 array[array.length - 1]
 //
+
+
+***Example : to update the last element of an array
+//let cities = [ "Los Angeles", "Glendale", "Pasadena" ];
+console.log(cities);
+cities[cities.length - 1]= "California";
+console.log(cities);
+//
+
+**In order to access an HTML element we used the getElementByID() method.
+
+**is and has can help us out assign boolean value to a variable
+Example Code
+let isRunning = true;
+let hasCompleted = false;
+
