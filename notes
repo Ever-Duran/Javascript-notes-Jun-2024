@@ -1,0 +1,7 @@
+These are some JS notes about courses Some code lines and notes are taken from freecodecamp.org. so I don't own the rights. However, I'm just writing for future references.
+
+ To get the last element of any array, you can use the following syntax:
+
+//
+array[array.length - 1]
+//
