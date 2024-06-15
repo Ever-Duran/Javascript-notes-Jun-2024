@@ -21,3 +21,21 @@ Example Code
 let isRunning = true;
 let hasCompleted = false;
 
+***
+.replace() allows you to replace characters in a string with another string
+This method can take two arguments. The first one is the element to be replaced and the second is the string that will be replacing the matched sequence.
+
+the g flag, stands for "global"
+const regex = /[+-\s]/g;
+*the i flag, which stands for "insensitive".
+Example Code
+
+/Hello/i
+This includes any E in hello : hEllo, HELLO, Hello, hello, etc
+
+*Prevent  1e10
+function isInvalidInput(str) {
+  const regex = /[0-9]e[0-9]/i;
+}
+
+
