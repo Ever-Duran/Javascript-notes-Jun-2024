@@ -89,4 +89,14 @@ console.log(firstName.toLowerCase()); // Output: daniel
 Math.abs() 
 returns an absolute value
 
+const num = -10;
+Math.abs(num); // 10
+
+***
+.remove ()
+this element accepts a string that represents the class to remove from the element.
+const paragraphElement = document.getElementById('paragraph');
+paragraphElement.classList.remove('hide');
+
+/
 
