@@ -78,4 +78,15 @@ forgetInputContainer.innerHTML += HTMLString;
 preventDefault()
 to prevent a default effect or action
 
+**
+.toLowerCase()
+to convert to lower case
+e.g 
+const firstName = 'DANIEL';
+console.log(firstName.toLowerCase()); // Output: daniel
+
+*
+Math.abs() 
+returns an absolute value
+
 
