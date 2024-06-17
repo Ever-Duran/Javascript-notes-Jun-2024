@@ -97,6 +97,15 @@ Math.abs(num); // 10
 this element accepts a string that represents the class to remove from the element.
 const paragraphElement = document.getElementById('paragraph');
 paragraphElement.classList.remove('hide');
+/output.classList.remove('hide');/
+***
+Array.from takes a NodeList and transforms the content to an array
+Array.from(document.querySelectorAll('li'))
+***
 
-/
+The difference between innerHTML and innerText is that innerText only returns a string, it doesn´t render HTML elements.
+***
+classList also had a property called .add() has an opposite effect from remove() as it can add an element.
+
+
 
