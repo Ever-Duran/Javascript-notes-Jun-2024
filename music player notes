@@ -1,0 +1,44 @@
+June 18 2024
+------------------
+How to create an array?
+const allSongs = [];
+How to add an object?
+const allSongs = [
+{ id : 2;
+}
+]
+
+*************
+spread operator (...) allows you to copy an array
+e.g.
+let usersData = {
+    list : [...allSongs],
+};
+
+
+**
+arrow functions don't have a name. 
+e.g : () => {}
+
+to create a name you can assign the function to a variable :
+e.g. const sum = () => {
+//code
+}
+
+we call this function as a regular one
+***
+
+arrow functions can accept multiple parameters
+you can delete the brackets if the funcion only has one parameter
+e.g. const sum = (name) => {
+}
+---
+const sum = name => {
+}
+
+
+
+
+
+
+
