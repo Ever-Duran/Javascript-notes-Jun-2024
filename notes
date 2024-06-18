@@ -108,4 +108,18 @@ The difference between innerHTML and innerText is that innerText only returns a 
 classList also had a property called .add() has an opposite effect from remove() as it can add an element.
 
 
+June 18 2024
+------------------
+How to create an array?
+const allSongs = [];
+How to add an object?
+const allSongs = [
+{ id : 2;
+}
+]
+
+
+*************
+
+
 
