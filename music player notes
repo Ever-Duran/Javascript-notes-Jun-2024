@@ -35,7 +35,7 @@ e.g. const sum = (name) => {
 ---
 const sum = name => {
 }
-
+if the arrow function returns one expression, you can skip including the return and {}.
 
 
 
