@@ -38,6 +38,52 @@ const sum = name => {
 if the arrow function returns one expression, you can skip including the return and {}.
 
 
+* the map() method is used to iterate through an array and return a new array.
+-map() takes a function as an argument, this is called callback function.
+
+const songsHTML = array.map((song) => {});
+
+* join() method is used to concatenate all rlements of an array into a single string.
+it can take a "separate" argument which works to separate the elements in the array.
+
+
+In order to change multiple methods you can call the join() on the results lf the map()
+e.g. : array.map().join();
+
+*Optional Chaining (?) it prevents errors when you access a nested property
+that may be null or undefined.
+
+*sort() converts elements of an array into strings and sorts them.
+(you must create a conditional if to use this method)/
+
+* .find() searches the first element in an array that matches a condition.
+
+*indexOf() returns the first index at which a previous element can be found.
+
+* add() adds a new element to a set.
+
+* forEach() it's used to loop through an array and performs a function on each element.
+
+* removeAttribute() removes an attribute from an element.
+
+* setAttribute() assigns an attribute to an element.
+
+* textContent() sets the text of a Node and allows tou to set or retrieve the text of an html élément.
+
+randomize an array
+- names.sort(() => Math.random() -0.5);
+
+* filter() keeps the elemenets of an array that satisfy the call back function passed to it.
+
+* createElement() Dom method. You can use it to create a new element. 
+e.g. document.createElement('div')
+
+* textNode() creates a text node. To use it you call it and pass it in the next as a string.
+
+* element.id can add an id to an element.
+
+*appendChild() adds a node or an element as the child of another element.
+
 
 
 
