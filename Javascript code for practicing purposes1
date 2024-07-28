@@ -1,30 +1,30 @@
 function converter() {
 	let millas = 0.621371;
-	let kilometros = 67.89;
+	let kilometros = 88.89;
 	 return kilometros * millas;
 	}
 	console.log(converter());
 
 	/*2 Calculate a grade report average*/
 	function promedio() {
-	let nota1 = 8.9;
-	let nota2 = 9.4;
-	let nota3 = 5.7;
-	let nota4 = 7.8;
-	let nota5 = 3.4;
+	let nota1 = 9.9;
+	let nota2 = 8.4;
+	let nota3 = 6.7;
+	let nota4 = 8.8;
+	let nota5 = 6.4;
 	sum = nota1 + nota2 + nota3 + nota4 + nota5;
 			return sum / 5;
 }
 console.log(promedio());
 
 /*3 Calculate a circle area*/
-let radio = 56.89;
+let radio = 84.89;
 let phi = 3.14159;
 let circleArea = phi * (radio **2);
 console.log(circleArea);
 
 /*A rectangle perimeter*/
-let largo = 198.90;
-let ancho = 67.57;
+let largo = 254.90;
+let ancho = 69.57;
 let perimetro = (largo * 2) + (ancho * 2);
 console.log(perimetro);
