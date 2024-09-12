@@ -28,3 +28,34 @@ let largo = 254.90;
 let ancho = 69.57;
 let perimetro = (largo * 2) + (ancho * 2);
 console.log(perimetro);
+
+/*-----------------------*/
+/*This are some exercises I had to code for my introduction to programming class.
+Create a tuple that contains the name of the plantes and print the 3rd element. The exercises were for Pythong 
+so I adapted them to JS and created arrays instead*/
+
+let planets = ["venus", "mercurio", "marte", "tierra", "saturno","neptuno", "jupiter", "pluton", "urano",];
+console.log(planets[2]);
+
+/*create an array that contains the days of the week and print the first and last elements*/
+let semana = ["domingo", "lunes", "martes", "miércoles","jueves", "viernes", "sábado"]
+console.log(semana[0], semana[6]);
+console.log(semana.length);
+
+/*create a tuple with the numbers from 0 - 10 and get the total additions of all the numbers*/
+let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let suma = 0;
+
+for(let i in numbers){
+    suma += i;    
+};
+console.log(suma);
+console.log();
+
+
+/*Create a tuple of your friend's names and sorted alfabetically*/
+let friends = ["Hector", "Kevin", "Jose", "Gamliel", "Adolfo"];
+friends.sort();
+console.log(friends);
+
+
