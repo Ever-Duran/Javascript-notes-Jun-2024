@@ -139,6 +139,30 @@ matrix[2][1] = 80; //it changes  the second element of the third row
 console.log(matrix[2][1]); //80
 
 
+//********
+//Example
+//1. Add all elements of an Unidimensional Array
+let numbers = [10, 20, 30, 40, 50];
+let suma = 0;
 
+for (let i = 0; i < numbers.length; i++) {
+    suma += numbers[i];
+}
+
+console.log("The total of the elements is: " + suma); //150
+
+//Example
+//2. Iterate and show elements of a Bidimensional Array
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+        console.log("Element in [" + i + "][" + j + "] is : " + matrix[i][j];
+    }
+}
 
 
