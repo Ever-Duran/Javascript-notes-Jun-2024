@@ -1,12 +1,6 @@
 if (condition) {
-
 } else {
-
 }
-
-
-
-
 
 //switch
 switch (expression) {
@@ -79,6 +73,21 @@ for (let i = 0; i < 10; i++) {
     }
     console.log("Iteration number " + i);
 }
+
+
+//**************************
+//Arrays
+//literal form
+let numbers = [ 1, 2, 3, 4, 5];
+let names = ["Juan", "Ana", "Carlos"];
+
+//using the array constructor
+let numbers = new Array(1,2,3,4);
+
+//Access elements
+let numbers = [ 10, 20, 30, 40, 50];
+console.log(numbers[0]); // 10
+console.log(numbers[3]); // 40
 
 
 
