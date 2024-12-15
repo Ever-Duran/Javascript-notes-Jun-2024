@@ -63,6 +63,22 @@ do {
 } while (i < 5);
 
 
+//break
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break;
+    }
+    console.log("Iteration number " + i};
+}
+
+
+//continue
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        continue;
+    }
+    console.log("Iteration number " + i);
+}
 
 
 
