@@ -99,5 +99,46 @@ numbers.splice(2, 1);
 
 console.log(numbers); //[10, 20, 40]
 
+//**********************
+//**********************
+
+//Bidimensional Arrays
+//Declare a matrix
+//literal way
+
+let matrix = [
+[1, 2, 3],
+[4, 5, 6],
+[7, 8, 9],
+];
+
+
+//constructor array
+let matrix = new Array(
+    new Array(1, 2, 3),
+    new Array(4, 5, 6),
+    new Array(7, 8, 9)
+);
+
+//Access elements 
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+console.log(matrix[0][0]); //1 (first element, first row)
+console.log(matrix[1][2]); //6 (third element, second row)
+
+//modify elements
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+matrix[2][1] = 80; //it changes  the second element of the third row
+console.log(matrix[2][1]); //80
+
+
+
 
 
