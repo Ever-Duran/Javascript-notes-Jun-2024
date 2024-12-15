@@ -5,17 +5,11 @@ if (condition) {
 //switch
 switch (expression) {
     case value1:
-
         break;
     case value2:
         break;
     default:
-
 }
-
-
-
-
 
 //****************************
 //LOOPS
@@ -88,6 +82,22 @@ let numbers = new Array(1,2,3,4);
 let numbers = [ 10, 20, 30, 40, 50];
 console.log(numbers[0]); // 10
 console.log(numbers[3]); // 40
+
+//***************************
+//Commom Properties and Methods
+
+//length() : Returns the number of elements included in the array.
+//push() : Adds one or more elements to the array.
+//pop() : Delete the last element in the array.
+//shift() : Deletes the first element of the array.
+//unshift() : Adds one or more elements in the beginning of the array 
+//splice() : Deletes, adds or replaces elements in the array.
+
+let numbers = [10, 20, 30, 40]
+//it deletes one element from index 2
+numbers.splice(2, 1);
+
+console.log(numbers); //[10, 20, 40]
 
 
 
