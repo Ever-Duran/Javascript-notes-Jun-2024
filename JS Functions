@@ -21,12 +21,36 @@ saludar("Juan");
 //PARAMETERS AND ARGUMENTS 
 function addition(a, b) {
     let resultado = a + b;
-    console.log("La suma es: " + resultado);
+    console.log("The addition is: " + resultado);
 }
 
 addition(5, 10); //The addition is: 15
 
 
+//**************
+//RETURN A VALUE
+function multiply(a, b) {
+    return a * b;
+}
 
+let total = multiply(4, 5);
+console.log("The total is: " + total); // The total is: 20
+
+//**************
+//ANONYMOUS FUNCTIONS
+//Nameless functions that can be assigned to variables
+let greet = function(name) {
+   return "Hi, " + name + "!";
+};
+
+console.log(greet("Ana")); //Hi, Ana!
+
+
+//*************
+//ARROW FUNCTIONS
+//A shorter syntax to define anonymous functions
+let nameOfFunction = (parameter1, parameter2) => {
+    //code to execute
+};
 
 
