@@ -2,3 +2,13 @@ function nameofFuction(parameter1, parameter2) {
     //code to execute
 }
 
+
+//example
+function saludar(nombre) {
+    console.log("Hola, " + nombre + "!");
+}
+
+
+
+
+
