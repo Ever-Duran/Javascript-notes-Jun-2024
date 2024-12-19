@@ -9,6 +9,24 @@ function saludar(nombre) {
 }
 
 
+//******"****
+//CALLING A FUNCTION
+function saludar(nombre) {
+console.log("Hola, " + nombre + "!");
+}
+//Calls the function with "Juan" as an argument
+saludar("Juan");
+
+//************
+//PARAMETERS AND ARGUMENTS 
+function addition(a, b) {
+    let resultado = a + b;
+    console.log("La suma es: " + resultado);
+}
+
+addition(5, 10); //The addition is: 15
+
+
 
 
 
