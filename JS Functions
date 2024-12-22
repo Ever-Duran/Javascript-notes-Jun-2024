@@ -53,4 +53,28 @@ let nameOfFunction = (parameter1, parameter2) => {
     //code to execute
 };
 
+//***************
+//FUNCTIONS AS FIRST CLASS OBJECTS
+function operationMath(operation, a, b) {
+    return operation(a, b);
+}
+
+let sum = (x, y) => x + y;
+let product = (x, y) => x * y;
+
+console.log(operationMath(sum, 5, 3));
+console.log(operationMath(product, 5, 3));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
