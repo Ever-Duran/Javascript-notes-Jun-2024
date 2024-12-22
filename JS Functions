@@ -10,7 +10,7 @@ function saludar(nombre) {
 
 
 //******"****
-//CALLING A FUNCTION
+//1. CALLING A FUNCTION
 function saludar(nombre) {
 console.log("Hola, " + nombre + "!");
 }
@@ -18,7 +18,7 @@ console.log("Hola, " + nombre + "!");
 saludar("Juan");
 
 //************
-//PARAMETERS AND ARGUMENTS 
+//2. PARAMETERS AND ARGUMENTS 
 function addition(a, b) {
     let resultado = a + b;
     console.log("The addition is: " + resultado);
@@ -28,7 +28,7 @@ addition(5, 10); //The addition is: 15
 
 
 //**************
-//RETURN A VALUE
+//3. RETURN A VALUE
 function multiply(a, b) {
     return a * b;
 }
@@ -37,7 +37,7 @@ let total = multiply(4, 5);
 console.log("The total is: " + total); // The total is: 20
 
 //**************
-//ANONYMOUS FUNCTIONS
+//4. ANONYMOUS FUNCTIONS
 //Nameless functions that can be assigned to variables
 let greet = function(name) {
    return "Hi, " + name + "!";
@@ -47,14 +47,14 @@ console.log(greet("Ana")); //Hi, Ana!
 
 
 //*************
-//ARROW FUNCTIONS
+//5. ARROW FUNCTIONS
 //A shorter syntax to define anonymous functions
 let nameOfFunction = (parameter1, parameter2) => {
     //code to execute
 };
 
 //***************
-//FUNCTIONS AS FIRST CLASS OBJECTS
+// 6.FUNCTIONS AS FIRST CLASS OBJECTS
 function operationMath(operation, a, b) {
     return operation(a, b);
 }
@@ -66,6 +66,45 @@ console.log(operationMath(sum, 5, 3));
 console.log(operationMath(product, 5, 3));
 
 
+//*****************
+//7. Superior Order Functions
+//Functions which can receive other functions as arguments and return functions as results. 
+//This is possible since functions in Javascript are first class objects.
+
+function applyOperation(operation, a, b) {
+    return operation(a, b);
+}
+
+function sum(x, y) {
+    return x + y;
+}
+
+function product(x, y) {
+    return x * y;
+}
+
+console.log(applyOperation(sum, 10, 20));
+console.log(applyOperation(product, 10, 20));
+
+//****************
+//8. CLOSURES
+//A function which remembers the lexical environment, the variables that were in the scope when the function was defined. 
+//This allows functions to access variables of its outside scope even after the context that they were created in was over.
+
+function createCount() {
+    let counter = 0;
+    return function() {
+        counter++;
+        return counter;
+    };
+}
+
+let counter1 = createCount();
+console.log(counter1());
+console.log(counter1());
+
+let counter2 = createCount();
+console.log(counter2());
 
 
 
