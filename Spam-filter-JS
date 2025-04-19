@@ -60,12 +60,49 @@ const dollarRegex = /[0-9]+(hundred|thousand|million|billion) dollars/i;
 
 While this expression does match 1 hundred dollars, it will not match 1  hundred  dollars, or 10 dollars.
 Replace the first literal space with the \s* expression. 
-The \s character class matches whitespace, such as spaces, tabs, and new lines. The * quantifier means "match the previous character 0 or more times".
+The \s character class matches whitespace, such as spaces, tabs, and new lines. The * quantifier means "match the previous
+ character 0 or more times".
 Replace the second literal space with \s+. The + quantifier means "match the previous character at least one time".
 
 *
 const dollarRegex = /[0-9]+\s*(hundred|thousand|million|billion)?\s+dollars/i;
 
 
+//****'' /
+One last thing with this expression. You don't actually need the match value from your capture group, so you can turn it into a non-capturing group. This will allow you to group the characters together without preserving the result.
+
+To create a non-capturing group in a regular expression, you can add ?: after the opening parenthesis of a group. For instance, (?:a|b) will match either a or b, but it will not capture the result.
+
+Update your regular expression to use a non-capturing group.
+
+*
+const dollarRegex = /[0-9]+\s*(?:hundred|thousand|million|billion)?\s+dollars/i;
+
+
+const freeRegex = /fr[e3][e3] m[o0]n[e3]y/i;
+
+//*****//
+
+To match the beginning of the text, you can use the ^ anchor. This asserts that your pattern match starts at the beginning of the full string.
+
+*
+const freeRegex = /(?:^|\s)fr[e3][e3] m[o0]n[e3]y\s/i;
+
+
+//****//
+
+Like the ^ anchor, you can use the $ anchor to match the end of the string.
+
+
+*
+const freeRegex = /(?:^|\s)fr[e3][e3] m[o0]n[e3]y(?:\s|$)/i;
+
+
+//*****//
+
+To put everything you have learned together, update your dearRegex to map the vowels to the corresponding numbers (note that i should match 1, and also match the pipe symbol |), and to match whole words.
+
+
+const dearRegex = /(?:^|\s)d[e3][a4@]r fr[i|1][e3]nd(?:$|\s)/i;
 
 
