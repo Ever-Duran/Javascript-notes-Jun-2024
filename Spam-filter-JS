@@ -43,11 +43,28 @@ const isSpam = (msg) => helpRegex.test(msg);
 *
 const dollarRegex = /[0-9] dollars/i;
 
+We add + as there will be more than one digit
+*
+const dollarRegex = /[0-9]+ dollars/i;
+
+Values are added
+
+*
+const dollarRegex = /[0-9]+ hundred|thousand|million|billion dollars/i;
 
 //*********//
 
+You can define a capture group by wrapping a part of your expression in parentheses. 
+*
+const dollarRegex = /[0-9]+(hundred|thousand|million|billion) dollars/i;
 
+While this expression does match 1 hundred dollars, it will not match 1  hundred  dollars, or 10 dollars.
+Replace the first literal space with the \s* expression. 
+The \s character class matches whitespace, such as spaces, tabs, and new lines. The * quantifier means "match the previous character 0 or more times".
+Replace the second literal space with \s+. The + quantifier means "match the previous character at least one time".
 
+*
+const dollarRegex = /[0-9]+\s*(hundred|thousand|million|billion)?\s+dollars/i;
 
 
 
