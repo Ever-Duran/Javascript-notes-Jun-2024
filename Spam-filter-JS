@@ -9,3 +9,46 @@ Flags are added after the trailing slash. Add the i flag to your helpRegex.
 const helpRegex = /please help/i;
 
 //******//
+Strings have a .match() method, which accepts a regular expression as an argument and determines if the string matches that expression.
+Update your isSpam() function to implicitly return the result of calling the .match() method on msg, passing helpRegex as the argument.
+
+*
+const isSpam = (msg) => msg.match(helpRegex);
+
+Instead of using the .match() method, you can use the .test() method of a regular expression to test if a string matches the pattern. 
+Unlike .match(), .test() returns a boolean value indicating whether or not the string matches the pattern.
+
+*
+const isSpam = (msg) => helpRegex.test(msg);
+
+//******//
+
+The regular expression /yes|no/ will match either yes or no.
+Update your helpRegex to match either please help or assist me.
+
+*
+const helpRegex = /please help|assist me/i;
+
+//************//
+
+The .some() method. Like the .filter() method, .some() accepts a callback function which should take an element of the array as the argument. 
+The .some() method will return true if the callback function returns true for at least one element in the array.
+Here is an example of a .some() method call to check if any element in the array is an uppercase letter.
+
+Example Codeconst arr = ["A", "b", "C"];arr.some(letter => letter === letter.toUpperCase());
+
+*
+const isSpam = (msg) => helpRegex.test(msg);
+
+*
+const dollarRegex = /[0-9] dollars/i;
+
+
+//*********//
+
+
+
+
+
+
+
