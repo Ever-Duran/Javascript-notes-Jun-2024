@@ -4,7 +4,39 @@ unsorted values towards the end, iterating through the array until it is complet
 
 
 
-
+//****************//
 The last sorting algorithm you will implement is the insertion sort. 
 This algorithm works by building up a sorted array at the beginning of the list. It begins the sorted array with the first element. 
 Then it inspects the next element and swaps it backward into the sorted array until it is in a sorted position, and so on.
+
+const insertionSort = (array) => {
+  for (let i = 1; i < array.length; i++) {
+    const currValue = array[i];
+    let j = i - 1;
+
+    while (j >= 0 && array[j] > currValue) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = currValue;
+  }
+  return array;
+}
+
+
+
+
+
+//*******//
+The callback to .sort() should return a number. That number determines how to sort the elements a and b:
+
+If the number is negative, sort a before b.
+If the number is positive, sort b before a.
+If the number is zero, do not change the order of a and b.
+Keeping in mind that you want the numbers to be sorted in ascending order (smallest to largest), 
+return a single subtraction calculation using a and b that will correctly sort the numbers with the above logic.
+
+
+const sortedValues = inputValues.sort((a, b) => {
+    return a - b;
+  });
