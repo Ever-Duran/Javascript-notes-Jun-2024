@@ -1,7 +1,6 @@
 The first sorting algorithm is the bubble sort, which starts at the beginning of the array and 'bubbles up' 
 unsorted values towards the end, iterating through the array until it is completely sorted.
 
-
 const bubbleSort = (array) => {
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array.length - 1; j++) {
@@ -15,9 +14,6 @@ const bubbleSort = (array) => {
 
   return array;
 }
-
-
-
 
 
 //********//
@@ -46,8 +42,6 @@ const selectionSort = (array) => {
 }
 
 
-
-
 //****************//
 The last sorting algorithm you will implement is the insertion sort. 
 This algorithm works by building up a sorted array at the beginning of the list. It begins the sorted array with the first element. 
@@ -67,10 +61,6 @@ const insertionSort = (array) => {
   return array;
 }
 
-
-
-
-
 //*******//
 The callback to .sort() should return a number. That number determines how to sort the elements a and b:
 
@@ -84,3 +74,24 @@ return a single subtraction calculation using a and b that will correctly sort t
 const sortedValues = inputValues.sort((a, b) => {
     return a - b;
   });
+
+
+//*******************************************************************************//
+.map() method takes a callback function as its first argument. 
+This callback function takes a few arguments, but the first one is the current element being processed. 
+The callback function needs to return a value. In this case, you want to return the value of each element converted to a number. 
+You can do this by using the Number() constructor, passing the element as an argument.
+
+const calculate = () => {
+  const value = document.querySelector("#numbers").value;
+  const array = value.split(/,\s*/g);
+  const numbers = array.map();
+}
+
+
+
+
+
+
+
+
