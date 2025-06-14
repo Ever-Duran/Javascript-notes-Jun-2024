@@ -31,7 +31,73 @@ It is useful for highlighting actions you want your user to take.
 <button class="btn btn-block btn-primary">Like</button>
 <button class = "btn btn-primary btn-block btn-info">Info</button>
 
-**
+**The btn-danger class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a photo.
+
+*******************************************************
+Use the Bootstrap Grid to Put Elements Side By Side
+
+Bootstrap uses a responsive 12-column grid system, which makes it easy to put elements into rows 
+and specify each element's relative width. Bootstrap has different column width attributes 
+that it uses depending on how wide the user's screen is. 
+
+For example Bootstrap's col-md-* class. Here, md means medium, 
+and * is a number specifying how many columns wide the element should be. 
+
+In the Cat Photo App that we're building, we'll use col-xs-*, 
+where xs means extra small and * is the number of columns specifying how many columns wide the element should be.
+
+**For images to adapt to the width
+<img src="imagen.jpg" class="img-responsive" alt="Imagen">
+
+//This is no longer available for Bootstrap 4 and 5 so I must use "img-fluid":
+<img src="imagen.jpg" class="img-fluid" alt="Imagen">
+
+**using the inline span element, you can put several elements on the same line, and even style different parts of the same line differently.
+
+*****************************************************
+Add Font Awesome Icons to our Buttons
+
+Font Awesome is a convenient library of icons. These icons can be webfonts or vector graphics. These icons are treated just like fonts.
+You can include Font Awesome in any app by adding the following code to the top of your HTML:
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+**The i element was originally used to make other elements italic, but is now commonly used for icons. 
+We add the Font Awesome class :  <i class="fas fa-info-circle"></i>
+
+**We add the thumbs-up, airplane and trash bin icon
+<button class="btn btn-block btn-primary"><i class="fas fa-thumbs-up"></i>Like</button>
+
+<button class="btn btn-block btn-primary"><i class="fa fa-paper-plane"></i>Submit</button>
+
+<button class="btn btn-block btn-danger"><i class="fas fa-trash"></i>Delete</button>
+
+
+**You can use Bootstrap's col-xs-* classes on form elements as well.
+This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.
+Nest both your radio buttons within a <div class="row"> element. 
+Then nest each of them within a <div class="col-xs-6"> element.
+
+**Since Bootstrap's col-xs-* classes are applicable to all form elements, 
+you can use them on your checkboxes too.
+
+**************
+You can add the fa-paper-plane Font Awesome icon by adding <i class="fa fa-paper-plane"></i> 
+within your submit button element.
+Give your form's text input field a class of form-control. 
+Give your form's submit button the classes btn btn-primary. 
+Also give this button the Font Awesome icon of fa-paper-plane.
+
+All textual <input>, <textarea>, and <select> elements with the class .form-control have a width of 100%.
+
+****************
+
+
+
+
+
+
 
 
 
@@ -39,3 +105,17 @@ It is useful for highlighting actions you want your user to take.
 
 
 **********************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
