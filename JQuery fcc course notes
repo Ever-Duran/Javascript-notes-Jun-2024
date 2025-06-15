@@ -1,0 +1,10 @@
+Indise your script tag add this code: 
+$(document).ready(function() { 
+});
+
+<script>$(document).ready(function(){
+});
+</script>
+
+********************
+
