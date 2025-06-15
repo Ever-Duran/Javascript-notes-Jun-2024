@@ -1,1 +1,162 @@
+Sass uses variables just like JS.
+Variables are declared with $
+
+E.g: 
+$main-fonts: Arial, sans-serif;
+$headings-color: green;
+
+Then, we use the variables : 
+h1 {
+  font-family: $main-fonts;
+  color: $headings-color;
+}
+
+My code (answer):
+$text-color : red;
+  .blog-spot, h2 {
+  color : $text-color;
+  }
+
+*****
+
+For large projects, CSS allows you to organize your code putting it in child style rules.
+
+article {
+  height: 200px;
+
+  p {
+    color: white;
+  }
+
+  ul {
+    color: blue;
+  }
+}
+
+My code (answer):
+<style type='text/scss'>
+  .blog-post {
+    h1 {
+    text-align: center;
+    color: blue;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+  
+</style>
+
+*****
+
+Create Reusable CSS with Mixins
+
+A mixin is a group of CSS declarations that can be reused throughout the style sheet.
+Starts with the at-rule and then you add a name.
+
+Mixins also allow you to add two arguments.
+E.g.:
+@mixin prose($font-size, $spacing) {
+  font-size: $font-size;
+  margin: 0;
+  margin-block-end: $spacing;
+}
+
+p {
+  @include prose(1.25rem, 1rem);
+}
+
+h2 {
+  @include prose(2.4rem, 1.5rem);
+}
+
+**
+You can make arguments optional by giving the parameters default values.
+
+@mixin text-color($color: black) {
+  color: $color;
+}
+
+p {
+  @include text-color(); /* color: black */
+}
+
+nav a {
+  @include text-color(orange);
+}
+
+**
+
+My answer (code): 
+
+****
+A mixin is a group of CSS declarations that can be reused throughout the style sheet. 
+The definition starts with the @mixin at-rule, followed by a custom name. You apply the mixin using the @include at-rule.
+
+E.g.: 
+mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul {
+  @include reset-list;
+}
+
+E.g.: adding arguments
+@mixin prose($font-size, $spacing) {
+  font-size: $font-size;
+  margin: 0;
+  margin-block-end: $spacing;
+}
+
+p {
+  @include prose(1.25rem, 1rem);
+}
+
+h2 {
+  @include prose(2.4rem, 1.5rem);
+}
+
+*//
+my code(answer):
+
+<style type='text/scss'>
+@mixin shape($w, $h, $bg-color) {
+  width : $w;
+  height : $h;
+  background-color: $bg-color;
+}
+
+#square {
+  @include shape(50px, 50px, red);
+
+}
+
+#rect-a {
+  @include shape(100px, 50px, blue);
+}
+
+#rect-b {
+  @include shape(50px, 100px, orange);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
