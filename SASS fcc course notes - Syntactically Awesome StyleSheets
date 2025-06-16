@@ -228,11 +228,127 @@ My answer( my code) :
 </style>
 
 *****
+Use @each to Map Over Items in a List
+
+@each $color in blue, red, green {
+  .#{$color}-text {color: $color;}
+}
+
+A map has slightly different syntax. Here's an example:
+$colors: (color1: blue, color2: red, color3: green);
+
+@each $key, $color in $colors {
+  .#{$color}-text {color: $color;}
+}
+
+**
+//
+$key variable is needed to reference the keys in the map. 
+Otherwise, the compiled CSS would have color1, color2... in it. 
+Both of the above code examples are converted into the following CSS:
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+**
+My code (answer)  : 
+<style type='text/scss'>
+@each $color in blue, black, red {
+  .#{$color}-bg {background-color: $color;}
+}
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+******
+
+Apply a Style Until a Condition is Met with @while
+
+@while directive is an option with similar functionality to the JavaScript while loop. It creates CSS rules until a condition is met.
+
+e.g.:
+$x: 1;
+@while $x < 13 {
+  .col-#{$x} { width: 100%/12 * $x;}
+  $x: $x + 1;
+}
+
+**
+
+<style type='text/scss'>
+  $x: 1;
+  @while $x < 6 {
+    .text-#{$x} {font-size: 15px * $x}
+    $x: $x + 1;
+  }
+</style>
+
+******
+
+Split Your Styles into Smaller Chunks with Partials
+
+Partials in Sass are separate files that hold segments of CSS code. These are imported and used in other Sass files. 
+This is a great way to group similar code into a module to keep it organized.
+
+Names for partials start with the underscore (_) character, which tells Sass it is a small segment of CSS 
+and not to convert it into a CSS file. Also, Sass files end with the .scss file extension. 
+To bring the code in the partial into another Sass file, use the @import directive.
+
+For example, if all your mixins are saved in a partial named "_mixins.scss", and they are needed in the "main.scss" file, 
+this is how to use them in the main file:
+
+@import 'mixins'
+Note that the underscore and file extension are not needed in the import statement - Sass understands it is a partial. 
+Once a partial is imported into a file, all variables, mixins, and other code are available to use.
+Write an @import statement to import a partial named _variables.scss into the main.scss file.
+
+my code (answer):
+@import "variables"
+
+*******
+
+Extend One Set of CSS Styles to Another Element
+
+@extend allows you to transfer the CSS rules from a class to another one. Also, you're able to add more properties.
+e.g.:
+
+.panel{
+  background-color: red;
+  height: 70px;
+  border: 2px solid green;
+}
+
+.big-panel{
+  @extend .panel;
+  width: 150px;
+  font-size: 2em;
+}
 
 
+my code ( answer ):
 
+  .info{
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
 
-
+  .info-important{
+    @extend .info;
+    background-color: magenta;
+  }
 
 
 
