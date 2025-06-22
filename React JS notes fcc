@@ -156,6 +156,147 @@ class TypesOfFood extends React.Component {
 ******
 
 Compose React Components
+my answer:
+
+class Fruits extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h2>Fruits:</h2>
+        { /* Change code below this line */ }
+          <NonCitrus />
+          <Citrus />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) {
+     super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        { /* Change code below this line */ }
+          <Fruits />
+
+        { /* Change code above this line */ }
+        <Vegetables />
+      </div>
+    );
+  }
+};
+
+******
+Render a Class Component to the DOM
+
+React components are passed into ReactDOM.render() a little differently than JSX elements.
+For JSX elements, you pass in the name of the element that you want to render. 
+However, for React components, you need to use the same syntax as if you were rendering a nested component, 
+for example ReactDOM.render(<ComponentToRender />, targetNode). 
+You use this syntax for both ES6 class components and functional components.
+
+my answer : 
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        {/* Change code below this line */}
+    <Fruits />
+    <Vegetables />
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+};
+
+// Change code below this line
+ReactDOM.render(<TypesOfFood />, document.getElementById("challenge-node"));
+
+
+********
+Write a React Component from Scratch
+
+// Change code below this line
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+    <div> 
+      <h1>My First React Component!</h1>
+    </div>
+    )
+  }
+};
+
+ReactDOM.render(<MyComponent />, document.getElementById("challenge-node"));
+
+
+******
+Pass Props to a Stateless Functional Component
+
+it's time to look at another feature very common in React: props. 
+In React, you can pass props, or properties, to child components. 
+Say you have an App component which renders a child component called Welcome which is a stateless functional component. 
+You can pass Welcome a user property by writing:
+
+<App>
+  <Welcome user='Mark' />
+</App>
+
+In this case, the created property user is passed to the component Welcome. Since Welcome is a stateless functional component, it has access to this value like so:
+
+
+const Welcome = (props) => <h1>Hello, {props.user}!</h1>
+
+
+It is standard to call this value props and when dealing with stateless functional components, 
+you basically consider it as an argument to a function which returns JSX. 
+You can access the value of the argument in the function body. With class components, you will see this is a little different.
+
+my answer : 
+const CurrentDate = (props) => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+   <p>The current date is: {props.date}!</p>
+      { /* Change code above this line */ }
+    </div>
+  );
+};
+
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        { /* Change code below this line */ }
+        <CurrentDate date = {Date()} />
+        
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
+******
 
 
 
@@ -165,17 +306,32 @@ Compose React Components
 
 
 
+my answer(code):
 
+const CurrentDate = (props) => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+   <p>The current date is: {props.date}!</p>
+      { /* Change code above this line */ }
+    </div>
+  );
+};
 
-
-
-
-
-
-
-
-
-
-
-
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        { /* Change code below this line */ }
+        <CurrentDate date = {Date()} />
+        
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
 
