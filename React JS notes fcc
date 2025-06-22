@@ -1,1 +1,32 @@
+Create a Simple JSX Element
+
+React uses a syntax extension of JavaScript called JSX that allows you to write HTML directly within JavaScript.
+*because JSX is a syntactic extension of JavaScript, you can actually write JavaScript directly within JSX.
+//{ 'this is treated as JavaScript code' }
+
+
+*It's worth noting that under the hood the challenges are calling ReactDOM.render(JSX, document.getElementById('root'))
+
+
+*****
+Create a Complex JSX Element
+example:
+
+Valid JSX:
+
+<div>
+  <p>Paragraph One</p>
+  <p>Paragraph Two</p>
+  <p>Paragraph Three</p>
+</div>
+Invalid JSX:
+
+<p>Paragraph One</p>
+<p>Paragraph Two</p>
+<p>Paragraph Three</p>
+
+
+******
+
+
 
