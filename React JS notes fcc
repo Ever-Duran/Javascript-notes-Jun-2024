@@ -27,6 +27,155 @@ Invalid JSX:
 
 
 ******
+Define a new constant JSX that renders a div which contains the following elements in order:
+
+When you have a lot of elements you can wrap them up using (); it's optional though.
+const JSX = <div>
+    <h1></h1>
+    <p></p>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+
+    </ul>
+</div>;
+
+******
+
+Add Comments in JSX
+
+
+To add comments you use : {/* */}
+
+
+******
+Render HTML Elements to the DOM
+
+ReactDOM offers a simple method to render React elements to the DOM which looks like this: ReactDOM.render(componentToRender, targetNode)
+where the first argument is the React element or component that you want to render, 
+and the second argument is the DOM node that you want to render the component to.
+
+My answer (code) : 
+const JSX = (
+  <div>
+    <h1>Hello World</h1>
+    <p>Lets render this to the DOM</p>
+  </div>
+);
+// Add your code below this line
+ReactDOM.render(JSX, document.getElementById("challenge-node"));
+
+******
+Define an HTML Class in JSX
+
+Naming changes for JSX for class, for example, so we should use nameClass instead. 
+A click event in JSX is onClick, instead of onclick. Likewise, onchange becomes onChange.
+
+Apply a class of myDiv to the div provided in the JSX code.
+const JSX = (
+  <div className = "myDiv">
+    <h1>Add a class to this div</h1>
+  </div>
+);
+
+
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        { /* Change code below this line */ }
+          <ChildComponent />
+        
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+******
+Use React to Render Nested Components
+
+my code (answer)
+
+const TypesOfFruit = () => {
+  return (
+    <div>
+      <h2>Fruits:</h2>
+      <ul>
+        <li>Apples</li>
+        <li>Blueberries</li>
+        <li>Strawberries</li>
+        <li>Bananas</li>
+      </ul>
+    </div>
+  );
+};
+
+const Fruits = () => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+      <TypesOfFruit />
+      { /* Change code above this line */ }
+    </div>
+  );
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        { /* Change code below this line */ }
+        <Fruits />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
+******
+
+Compose React Components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
