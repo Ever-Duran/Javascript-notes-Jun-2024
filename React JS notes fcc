@@ -387,5 +387,24 @@ class ToDo extends React.Component {
 };
 
 
+*******
+You can use this to add a default value to props.
+MyComponent.defaultProps = { location: 'San Francisco' }
+
+you have defined a location prop that's set to the string San Francisco, unless you specify otherwise. 
+React assigns default props if props are undefined, but if you pass null as the value for a prop, it will remain null.
+
+My answer (code): 
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+// Change code below this line
+ShoppingCart.defaultProps = {
+  items : 0
+}
 
 
