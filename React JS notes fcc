@@ -469,8 +469,84 @@ class ShoppingCart extends React.Component {
 };
 
 
+********************************
+
+Anytime you refer to a class component within itself, you use the this keyword. 
+To access props within a class component, you preface the code that you use to access it with this. 
+For example, if an ES6 class component has a prop called data, you write {this.props.data} in JSX.
 
 
+My answer : 
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            { /* Change code below this line */ }
+            <Welcome name = "Bob" />
+            { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          { /* Change code below this line */ }
+          <p>Hello, <strong>{this.props.name}</strong>!</p>
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+
+*****************************
+*****************************
+A stateless functional component is any function you write which accepts props and returns JSX.
+
+Try to minimize statefulness and to create stateless functional components wherever possible. 
+This helps contain your state management to a specific area of your application. 
+In turn, this improves development and maintenance of your app by making it easier to follow how changes to state affect its behavior.
+
+
+
+
+my answer(code): 
+
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper name = "Daisy"/>
+      </div>
+    );
+  }
+};
+// Change code below this line
+
+const Camper = (props) => {
+  return <p>{props.name}</p>
+    
+  Camper.propTypes = { name : PropTypes.string. isRequired}
+
+  Camper.defaultProps = {
+  name: "CamperBot"
+}
+};
 
 
 
