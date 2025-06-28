@@ -9,7 +9,7 @@ React uses a syntax extension of JavaScript called JSX that allows you to write 
 
 
 *****
-Create a Complex JSX Element
+04. Create a Complex JSX Element
 example:
 
 Valid JSX:
@@ -27,7 +27,7 @@ Invalid JSX:
 
 
 ******
-Define a new constant JSX that renders a div which contains the following elements in order:
+05. Define a new constant JSX that renders a div which contains the following elements in order:
 
 When you have a lot of elements you can wrap them up using (); it's optional though.
 const JSX = <div>
@@ -42,7 +42,7 @@ const JSX = <div>
 </div>;
 
 ******
-
+06.
 Add Comments in JSX
 
 
@@ -50,7 +50,7 @@ To add comments you use : {/* */}
 
 
 ******
-Render HTML Elements to the DOM
+07. Render HTML Elements to the DOM
 
 ReactDOM offers a simple method to render React elements to the DOM which looks like this: ReactDOM.render(componentToRender, targetNode)
 where the first argument is the React element or component that you want to render, 
@@ -67,7 +67,7 @@ const JSX = (
 ReactDOM.render(JSX, document.getElementById("challenge-node"));
 
 ******
-Define an HTML Class in JSX
+08. Define an HTML Class in JSX
 
 Naming changes for JSX for class, for example, so we should use nameClass instead. 
 A click event in JSX is onClick, instead of onclick. Likewise, onchange becomes onChange.
@@ -107,7 +107,7 @@ class ParentComponent extends React.Component {
 };
 
 ******
-Use React to Render Nested Components
+09. Use React to Render Nested Components
 
 my code (answer)
 
@@ -154,8 +154,7 @@ class TypesOfFood extends React.Component {
 
 
 ******
-
-Compose React Components
+10. Compose React Components
 my answer:
 
 class Fruits extends React.Component {
@@ -194,7 +193,7 @@ class TypesOfFood extends React.Component {
 };
 
 ******
-Render a Class Component to the DOM
+11. Render a Class Component to the DOM
 
 React components are passed into ReactDOM.render() a little differently than JSX elements.
 For JSX elements, you pass in the name of the element that you want to render. 
@@ -225,7 +224,7 @@ ReactDOM.render(<TypesOfFood />, document.getElementById("challenge-node"));
 
 
 ********
-Write a React Component from Scratch
+12. Write a React Component from Scratch
 
 // Change code below this line
 class MyComponent extends React.Component {
@@ -246,7 +245,7 @@ ReactDOM.render(<MyComponent />, document.getElementById("challenge-node"));
 
 
 ******
-Pass Props to a Stateless Functional Component
+13. Pass Props to a Stateless Functional Component
 
 it's time to look at another feature very common in React: props. 
 In React, you can pass props, or properties, to child components. 
@@ -299,7 +298,7 @@ class Calendar extends React.Component {
 ******
 
 
-
+14.
 
 
 
@@ -336,7 +335,7 @@ class Calendar extends React.Component {
 };
 
 **************************
-Pass an Array as Props
+15. Pass an Array as Props
 
 To pass an array to a JSX element, it must be treated as JavaScript and wrapped in curly braces.
 
@@ -388,6 +387,7 @@ class ToDo extends React.Component {
 
 
 *******
+16. 
 You can use this to add a default value to props.
 MyComponent.defaultProps = { location: 'San Francisco' }
 
@@ -409,6 +409,7 @@ ShoppingCart.defaultProps = {
 
 
 *****
+17. 
 The ability to set default props is a useful feature in React. 
 The way to override the default props is to explicitly set the prop values for a component.
 
@@ -437,7 +438,7 @@ class ShoppingCart extends React.Component {
 
 
 ******
-Use PropTypes to Define the Props You Expect
+18. Use PropTypes to Define the Props You Expect
 
 
 You can set propTypes on your component to require the data to be of type array. 
@@ -470,6 +471,7 @@ class ShoppingCart extends React.Component {
 
 
 ********************************
+19. 
 
 Anytime you refer to a class component within itself, you use the this keyword. 
 To access props within a class component, you preface the code that you use to access it with this. 
@@ -513,7 +515,7 @@ class Welcome extends React.Component {
 
 *****************************
 *****************************
-A stateless functional component is any function you write which accepts props and returns JSX.
+20. A stateless functional component is any function you write which accepts props and returns JSX.
 
 Try to minimize statefulness and to create stateless functional components wherever possible. 
 This helps contain your state management to a specific area of your application. 
@@ -578,6 +580,7 @@ class StatefulComponent extends React.Component {
 };
 
 *********
+21. 
 
 If you want to access a state value within the return of the render method, you have to enclose the value in curly braces.
 The state could access in a Component locally.
@@ -604,7 +607,7 @@ class MyComponent extends React.Component {
 };
 
 ****************************
-Render State in the User Interface Another Way
+22. Render State in the User Interface Another Way
 
 There's another way to access a state in a component. You can do it on the render() before the return.
 
@@ -634,6 +637,42 @@ class MyComponent extends React.Component {
 };
 
 
+**********
+23. Set State with this.setState
+
+setState is a method that allows you to change the state. This is the way you call the setState method in a component: this.setState().
+
+
+this.setState({
+  username: 'Lewis'
+});
+
+
+my answer(code): 
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'Initial State'
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    // Change code below this line
+        this.setState({
+          name : "React Rocks!"
+        })
+    // Change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>Click Me</button>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
 
 
 
