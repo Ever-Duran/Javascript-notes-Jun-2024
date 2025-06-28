@@ -548,5 +548,103 @@ const Camper = (props) => {
 }
 };
 
+***********************
+The state property must be set to a JavaScript object. Declaring it looks like this:
+
+this.state = {
+
+}
+
+
+
+my answer(code):
+
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    // Only change code below this line
+    this.state = {
+      firstName : "Daisy",
+    }
+    // Only change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.firstName}</h1>
+      </div>
+    );
+  }
+};
+
+*********
+
+If you want to access a state value within the return of the render method, you have to enclose the value in curly braces.
+The state could access in a Component locally.
+
+
+my answer(code):
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <h1>{this.state.name}</h1>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+****************************
+Render State in the User Interface Another Way
+
+There's another way to access a state in a component. You can do it on the render() before the return.
+
+
+
+
+My answer(code):
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    // Change code below this line
+  const name = this.state.name;
+    // Change code above this line
+    return (
+      <div>
+        { /* Change code below this line */ }
+          <h1>{name}</h1>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
