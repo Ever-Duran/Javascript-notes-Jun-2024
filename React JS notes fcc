@@ -676,8 +676,7 @@ class MyComponent extends React.Component {
 
 ***************************
 
-Bind 'this' to a Class Method
-
+24. Bind 'this' to a Class Method 
 my answer(code):
 
 class MyComponent extends React.Component {
@@ -710,7 +709,7 @@ class MyComponent extends React.Component {
 
 ******************************
 
-Use State to Toggle an Element
+25 Use State to Toggle an Element
 
 Sometimes you might need to know the previous state when updating the state. 
 However, state updates may be asynchronous - this means React may batch multiple setState() calls into a single update. 
@@ -776,6 +775,106 @@ class MyComponent extends React.Component {
   }
 }
 
+*******************
+
+26 Write a Simple Counter
+
+You can design a more complex stateful component by combining the concepts covered so far. 
+These include initializing state, writing methods that set state, and assigning click handlers to trigger these methods.
+
+my answer ( code ) :
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+    // Change code below this line
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+    this.reset = this.reset.bind(this);
+    // Change code above this line
+  }
+  // Change code below this line
+    increment() {
+        this.setState((state) => ({
+          count: state.count + 1,
+        }));
+    }
+
+    decrement() {
+        this.setState((state) => ({
+          count: state.count - 1,
+        }));
+    };
+
+    reset() {
+         this.setState(() => ({
+           count: 0,
+         }));
+    };
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        <button className='inc' onClick={this.increment}>Increment!</button>
+        <button className='dec' onClick={this.decrement}>Decrement!</button>
+        <button className='reset' onClick={this.reset}>Reset</button>
+        <h1>Current Count: {this.state.count}</h1>
+      </div>
+    );
+  }
+};
+
+
+
+***************************************
+28. Create a Controlled Input
+
+Create a Controlled Input
+Your application may have more complex interactions between state and the rendered UI. 
+For example, form control elements for text input, such as input and textarea, maintain their own state in the DOM as the user types.
+With React, you can move this mutable state into a React component's state. 
+The user's input becomes part of the application state, so React controls the value of that input field. 
+Typically, if you have React components with input fields the user can type into, it will be a controlled input form.
+
+
+
+
+
+
+
+class ControlledInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    // Change code below this line
+  this.handleChange = this.handleChange.bind(this);
+      
+    // Change code above this line
+  }
+  // Change code below this line
+      handleChange(event) {
+          this.setState({
+          input: event.target.value
+        });
+      }
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */}
+        <input value = {this.state.input} onChange = {this.handleChange} />
+        { /* Change code above this line */}
+        <h4>Controlled Input:</h4>
+        <p>{this.state.input}</p>
+      </div>
+    );
+  }
+};
 
 
 
