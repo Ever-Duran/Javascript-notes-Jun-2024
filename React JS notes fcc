@@ -1038,6 +1038,25 @@ class RenderInput extends React.Component {
 
 **********************************
 
-31. 
+31. Use the Lifecycle Method componentWillMount
+
+In react there are several methods that provide opportunities to perform actions at specific points in the lifecycle of a component.
+This can be done right before they are rendered, before they update, before they receive props, before they unmount, and so on.
 
 
+
+my code (answer):
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentWillMount() {
+    // Change code below this line
+      
+      console.log("MyComponent");
+    // Change code above this line
+  }
+  render() {
+    return <div />
+  }
+};
