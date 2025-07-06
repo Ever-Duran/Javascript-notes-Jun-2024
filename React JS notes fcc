@@ -1060,3 +1060,90 @@ class MyComponent extends React.Component {
     return <div />
   }
 };
+
+
+************************
+32. Use the Lifecycle Method componentDidMount
+
+place API calls or any calls to your server in the lifecycle method componentDidMount()
+
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeUsers: null
+    };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        activeUsers: 1273
+      });
+    }, 2500);
+  }
+  render() {
+    return (
+      <div>
+        {/* Change code below this line */}
+        <h1>Active Users: {this.state.activeUsers}</h1>
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+}
+
+******************************
+33. Add Event Listeners
+The componentDidMount() method is also the best place to attach any event listeners you need to add for specific functionality. 
+React provides a synthetic event system which wraps the native event system present in browsers. 
+This means that the synthetic event system behaves exactly the same regardless of the user's browser - 
+even if the native events may behave differently between different browsers.
+
+
+
+my answer (code):
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  // Change code below this line
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyPress);
+  }
+  componentWillUnmount() {
+     document.removeEventListener("keydown", this.handleKeyPress);
+  }
+  // Change code above this line
+  handleEnter() {
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
+
+
+
+****************************
+34. 
+
+
+
+
