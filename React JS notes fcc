@@ -1589,13 +1589,33 @@ const renderOnline = usersOnline.map(item => <li key={item.username}>{item.usern
 
 
 
+************************************************
+
+46. Render React on the Server with renderToString
+
+So far, you have been rendering React components on the client. Normally, this is what you will always do. 
+However, there are some use cases where it makes sense to render a React component on the server. 
+Since React is a JavaScript view library and you can run JavaScript on the server with Node, this is possible. 
+In fact, React provides a renderToString() method you can use for this purpose.
 
 
 
+my answer (code):
 
+The renderToString() method is provided on ReactDOMServer, which is available here as a global object. 
+The method takes one argument which is a React element. Use this to render App to a string.
 
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div/>
+  }
+};
 
-
+// Change code below this line
+ReactDOMServer.renderToString(<App />);
 
 
 
