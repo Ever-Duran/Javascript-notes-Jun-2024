@@ -1,0 +1,172 @@
+1 . Create a Redux Store
+The Redux store is an object which holds and manages application state. There is a method called createStore() on the Redux object, 
+which you use to create the Redux store. This method takes a reducer function as a required argument. 
+The reducer function is covered in a later challenge, and is already defined for you in the code editor. It simply takes state as an argument and returns state.
+
+my answer (code) : 
+const reducer = (state = 5) => {
+  return state;
+}
+
+// Redux methods are available from a Redux object
+// For example: Redux.createStore()
+// Define the store here:
+
+const store = Redux.createStore(reducer);
+
+
+*************************
+2. Get State from the Redux Store
+
+The Redux store object provides several methods that allow you to interact with it. 
+For example, you can retrieve the current state held in the Redux store object with the getState() method.
+
+
+my answer(code): 
+const store = Redux.createStore(
+  (state = 5) => state
+);
+
+// Change code below this line
+
+const currentState = store.getState();
+
+
+***********************************
+
+3. Define a Redux Action
+
+In Redux, state updates are triggered by actions.
+
+my answer(code):
+// Define an action here:
+const action = {
+  type : "LOGIN"
+}
+
+***************************
+
+4. Define an Action Creator
+
+In Redux, you define action creators to accomplish this. An action creator is simply a JavaScript function that returns an action.
+
+my answer (code): 
+const action = {
+  type: 'LOGIN'
+}
+// Define an action creator here:
+
+const actionCreator = (action) => {
+
+};
+
+
+***********************************
+
+5. Dispatch an Action Event
+
+dispatch method is what you use to dispatch actions to the Redux store. 
+Calling store.dispatch() and passing the value returned from an action creator sends an action back to the store.
+
+example, the following lines are equivalent, and both dispatch the action of type LOGIN:
+
+store.dispatch(actionCreator());
+store.dispatch({ type: 'LOGIN' });
+
+
+
+my answer(code):
+const store = Redux.createStore(
+  (state = {login: false}) => state
+);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+// Dispatch the action here:
+store.dispatch(loginAction());
+store.dispatch({ type: 'LOGIN' });
+
+********************************************
+
+6. Handle an Action in the Store
+
+After an action is created and dispatched, the Redux store needs to know how to respond to that action. 
+This is the job of a reducer function. Reducers in Redux are responsible for the state modifications that take place in response to actions. 
+A reducer takes state and action as arguments, and it always returns a new state.
+
+
+my answer (code): 
+const defaultState = {
+  login: false
+};
+
+const reducer = (state = defaultState, action) => {
+  // Change code below this line
+    if (action.type === 'LOGIN') {
+      return {login : true}
+    } else {
+      {return state}
+    }
+  // Change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+
+**********************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
