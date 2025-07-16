@@ -171,13 +171,154 @@ const logoutUser = () => {
   }
 };
 
+**********************************
+
+
+8. Use const for Action Types
+A common practice when working with Redux is to assign action types as read-only constants, then reference these constants wherever they are used. 
+You can refactor the code you're working with to write the action types as const declarations.
+
+
+my answer(code):
+
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+
+  switch (action.type) {
+    case LOGIN: 
+      return {
+        authenticated: true
+      }
+    case LOGOUT: 
+      return {
+        authenticated: false
+      }
+
+    default:
+      return state;
+
+  }
+
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: LOGIN
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: LOGOUT
+  }
+};
+
+
+*****************************************************
+
+9. Register a Store Listener
+
+Another method you have access to on the Redux store object is store.subscribe(). 
+This allows you to subscribe listener functions to the store, which are called whenever an action is dispatched against the store. 
+One simple use for this method is to subscribe a function to your store that simply logs a message every time an action is received and the store is updated.
+
+
+
+
+my answer code: 
+const ADD = 'ADD';
+
+const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case ADD:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(reducer);
+// Global count variable:
+let count = 0;
+
+// Change code below this line
+const addOne = () => (count += 1);
+
+store.subscribe(addOne)
+// Change code above this line
+
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+
+
+************************************
+
+10. Combine Multiple Reducers
+
+In order to let us combine multiple reducers together, Redux provides the combineReducers() method. 
+
+write the combineReducers() method like this:
+
+const rootReducer = Redux.combineReducers({
+  auth: authenticationReducer,
+  notes: notesReducer
+});
 
 
 
 
 
+my answer(code).
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
 
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
 
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const authReducer = (state = {authenticated: false}, action) => {
+  switch(action.type) {
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+    default:
+      return state;
+  }
+};
+
+const rootReducer = Redux.combineReducers({
+    count : counterReducer,
+    auth : authReducer
+})// Define the root reducer here
+
+const store = Redux.createStore(rootReducer);
 
 
 
