@@ -538,16 +538,85 @@ const store = Redux.createStore(immutableReducer);
 
 *******************************************************
 
-16. 
+16. Remove an Item from an Array
+
+Time to practice removing items from an array. The spread operator can be used here as well. Other useful JavaScript methods include slice() and concat().
+
+
+my answer(code):
+const immutableReducer = (state = [0,1,2,3,4,5], action) => {
+  switch(action.type) {
+    case 'REMOVE_ITEM':
+      // Don't mutate state here or the tests will fail
+      return [
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1, state.length)
+      ];
+    default:
+      return state;
+  }
+};
+
+const removeItem = (index) => {
+  return {
+    type: 'REMOVE_ITEM',
+    index
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+
+
+****************************************************
+
+17. Copy an Object with Object.assign
+
+Here's an example:
+
+const newObject = Object.assign({}, obj1, obj2);
+This creates newObject as a new object, which contains the properties that currently exist in obj1 and obj2.
+
+
+my answer(code):
+
+const defaultState = {
+  user: 'CamperBot',
+  status: 'offline',
+  friends: '732,982',
+  community: 'freeCodeCamp'
+};
+
+const immutableReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case 'ONLINE':
+
+      // Don't mutate state here or the tests will fail
+      return Object.assign({}, state, {status: 'online'});
+    default:
+      return state;
+  }
+};
+
+const wakeUp = () => {
+  return {
+    type: 'ONLINE'
+  }
+};
+
+const store = Redux.createStore(immutableReducer);
 
 
 
+      return Object.assign({}, state, {status: 'online'});
+Explanation
+Object.assign(target, ...sources) copies the values of all enumerable own properties from one or more source objects to a target object.
 
+{}, state, { status: 'online' }:
 
+{}: creates a new empty object (so we don't mutate state)
 
+state: spreads all properties from the original state into the new object
 
-
-
-
+{ status: 'online' }: overwrites (or adds) the status property
 
 
