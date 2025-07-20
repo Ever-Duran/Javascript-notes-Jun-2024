@@ -362,26 +362,183 @@ store.dispatch(addNoteText('Hello!'));
 console.log(store.getState());
 
 
+*************************************************
+12. Use Middleware to Handle Asynchronous Actions
+
+ At some point you'll need to call asynchronous endpoints in your Redux app, so how do you handle these types of requests? 
+Redux provides middleware designed specifically for this purpose, called Redux Thunk middleware.
 
 
 
 
+my code (answer):
+
+const REQUESTING_DATA = 'REQUESTING_DATA'
+const RECEIVED_DATA = 'RECEIVED_DATA'
+
+const requestingData = () => { return {type: REQUESTING_DATA} }
+const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }
+
+const handleAsync = () => {
+  return function(dispatch) {
+    // Dispatch request action here
+    dispatch(requestingData());
+
+    setTimeout(function() {
+      let data = {
+        users: ['Jeff', 'William', 'Alice']
+      }
+      // Dispatch received data action here
+      dispatch(receivedData(data));
+    }, 2500);
+  }
+};
+
+const defaultState = {
+  fetching: false,
+  users: []
+};
+
+const asyncDataReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case REQUESTING_DATA:
+      return {
+        fetching: true,
+        users: []
+      }
+    case RECEIVED_DATA:
+      return {
+        fetching: false,
+        users: action.users
+      }
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+);
+
+
+**************************************************************
+
+13. Write a Counter with Redux
 
 
 
 
+my answer (code): 
+const INCREMENT = 'INCREMENT'; // Define a constant for increment action types
+const DECREMENT = 'DECREMENT'; // Define a constant for decrement action types
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1
+    case DECREMENT:
+      return state - 1
+    default:
+      return state
+  }
+};
 
 
+ // Define the counter reducer which will increment or decrement the state based on the action it receives
+
+const incAction = () => {return {type: INCREMENT}}; // Define an action creator for incrementing
+
+const decAction = () => {return {type: DECREMENT}};; // Define an action creator for decrementing
+
+const store = Redux.createStore(
+  (state = 0) => state)
+; // Define the Redux store here, passing in your reducers
 
 
+************************************
+
+14. Never Mutate State
+
+Redux does not actively enforce state immutability in its store or reducers, that responsibility falls on the programmer. 
+Fortunately, JavaScript (especially ES6) provides several useful tools you can use to enforce the immutability of your state, 
+whether it is a string, number, array, or object. Note that strings and numbers are primitive values and are immutable by nature. 
+In other words, 3 is always 3. You cannot change the value of the number 3. An array or object, however, is mutable. 
+In practice, your state will probably consist of an array or object, as these are useful data structures for representing many types of information.
+
+my answer(code):
+
+const ADD_TO_DO = 'ADD_TO_DO';
+
+// A list of strings representing tasks to do:
+const todos = [
+  'Go to the store',
+  'Clean the house',
+  'Cook dinner',
+  'Learn to code',
+];
+
+const immutableReducer = (state = todos, action) => {
+  switch(action.type) {
+    case ADD_TO_DO:
+      // Don't mutate state here or the tests will fail
+      return [...state,  action.todo];
+    default:
+      return state;
+  }
+};
+
+const addToDo = (todo) => {
+  return {
+    type: ADD_TO_DO,
+    todo
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
 
 
+********************************************************************
+
+15. Use the Spread Operator on Arrays
 
 
+The spread operator has a variety of applications, one of which is well-suited to the previous challenge of producing a new array from an existing array. 
+This is relatively new, but commonly used syntax. For example, if you have an array myArray and write:
+
+let newArray = [...myArray];
+
+newArray is now a clone of myArray.
+
+The ... effectively spreads out the values in myArray into a new array. To clone an array but add additional values in the new array, you could write 
+[...myArray, 'new value']. This would return a new array composed of the values in myArray and the string new value as the last value. 
+
+my code(answer):
 
 
+const immutableReducer = (state = ['Do not mutate state!'], action) => {
+  switch(action.type) {
+    case 'ADD_TO_DO':
+      // Don't mutate state here or the tests will fail
+      return [...state, action.todo]
+    default:
+      return state;
+  }
+};
+
+const addToDo = (todo) => {
+  return {
+    type: 'ADD_TO_DO',
+    todo
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
 
 
+*******************************************************
+
+16. 
 
 
 
